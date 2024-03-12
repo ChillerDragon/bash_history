@@ -1,0 +1,12 @@
+sudo systemctl status kmsconvt@tty3.service
+sudo systemctl restart kmsconvt@tty3.service
+sudo systemctl stop getty4.service
+sudo systemctl stop getty@tty4.service
+systemctl stop kmsconvt@tty5.service
+git submodule update --init --recursive
+CXXFLAGS=-pg CFLAGS=-pg cmake .. -DCMAKE_BUILD_TYPE=Debug -DHEADLESS_CLIENT=ON -DCURSES_CLIENT=ON
+cmake --build . --config Debug --target everything -- -k 0
+cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHEADLESS_CLIENT=ON -DCURSES_CLIENT=ON
+cmake .. -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+zbarimg -q --raw qrcode.png | pass otp insert totp-secret
