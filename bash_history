@@ -10,3 +10,4 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -DHEADLESS_CLIENT=ON -DCURSES_CLIENT=
 cmake .. -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
 cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 zbarimg -q --raw qrcode.png | pass otp insert totp-secret
+rsync --info=progress2 -r chiller@zillyhuhn.com:/tmp/foo .
