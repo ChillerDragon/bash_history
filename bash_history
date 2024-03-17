@@ -11,3 +11,4 @@ cmake .. -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
 cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 zbarimg -q --raw qrcode.png | pass otp insert totp-secret
 rsync --info=progress2 -r chiller@zillyhuhn.com:/tmp/foo .
+sudo tcpdump -i lo "port 8303" -w debug.pcap
