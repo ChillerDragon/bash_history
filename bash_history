@@ -13,4 +13,4 @@ zbarimg -q --raw qrcode.png | pass otp insert totp-secret
 rsync --info=progress2 -r chiller@zillyhuhn.com:/tmp/foo .
 sudo tcpdump -i lo "port 8303" -w debug.pcap
 ./DDNet "connect tw-0.7+udp://127.0.0.1"
-ssh -o StrictHostKeyChecking=no root@github.com
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@github.com
