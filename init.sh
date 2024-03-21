@@ -26,7 +26,7 @@ __chiller_hist_flipper() {
     return
   fi
   local match
-  match="$( (grep -v '^#' "$hist_file"; cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt) | fzf)"
+  match="$( (tac "$hist_file"; cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt) | fzf)"
   [ "$match" != "" ] && READLINE_LINE="$match"
 }
 
