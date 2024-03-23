@@ -22,7 +22,10 @@ __chiller_hist_flipper_deduplicate() {
 	then
 		return 1
 	fi
-	mv "$hist_file".tmp "$hist_file"
+	if ! mv "$hist_file".tmp "$hist_file"
+	then
+		return 1
+	fi
 	return 0
 }
 
