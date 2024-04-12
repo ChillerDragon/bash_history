@@ -17,3 +17,6 @@ sudo tcpdump -i lo "port 8303" -w debug.pcap
 ./DDNet "connect tw-0.7+udp://127.0.0.1"
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@github.com
 mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" -G Ninja ../llvm/
+git checkout -b pr_07_client_b76
+perl -i -p -e's/\bm_paPlayerInfosRace\b/m_apPlayerInfosRace/g' $(find . -name *.cpp)
+
