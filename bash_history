@@ -19,4 +19,5 @@ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@github.com
 mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" -G Ninja ../llvm/
 git checkout -b pr_07_client_b76
 perl -i -p -e's/\bm_paPlayerInfosRace\b/m_apPlayerInfosRace/g' $(find . -name *.cpp)
-
+./DDNet ~/.teeworlds/demos/auto/$(ls --sort=time ~/.teeworlds/demos/auto/ | head -n1)
+all_dirs "unzip *.zip; rm *.zip"
