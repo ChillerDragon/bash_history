@@ -58,8 +58,14 @@ __chiller_hist_flipper() {
 		tac "$hist_file"; cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt \
 		) |
 		fzf --prompt='[C-o] for old> ')"
-			[ "$match" != "" ] && READLINE_LINE="$match"
-		}
+
+	[ "$match" != "" ] && READLINE_LINE="$match"
+}
+
+if [ -s "$SCRIPT_DIR"/nudes.txt ]
+then
+	echo "Warning!! there are nudes in your history"
+fi
 
 bind -x '"\C-r":"__chiller_hist_flipper"'
 bind '"\C-o":reverse-search-history'
