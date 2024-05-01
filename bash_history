@@ -21,3 +21,5 @@ git checkout -b pr_07_client_b76
 perl -i -p -e's/\bm_paPlayerInfosRace\b/m_apPlayerInfosRace/g' $(find . -name *.cpp)
 ./DDNet ~/.teeworlds/demos/auto/$(ls --sort=time ~/.teeworlds/demos/auto/ | head -n1)
 all_dirs "unzip *.zip; rm *.zip"
+7za a foo.zip foo.txt -tzip -mem=AES256 -mx9 -p"$(read -r a;printf %s "$a")"
+
