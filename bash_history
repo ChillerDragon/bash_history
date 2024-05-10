@@ -22,4 +22,4 @@ perl -i -p -e's/\bm_paPlayerInfosRace\b/m_apPlayerInfosRace/g' $(find . -name *.
 ./DDNet ~/.teeworlds/demos/auto/$(ls --sort=time ~/.teeworlds/demos/auto/ | head -n1)
 all_dirs "unzip *.zip; rm *.zip"
 7za a foo.zip foo.txt -tzip -mem=AES256 -mx9 -p"$(read -rs a;printf %s "$a")"
-
+./DDNet-Server "sv_map DDNetPP-maps/BlmapChill"
