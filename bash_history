@@ -25,3 +25,4 @@ all_dirs "unzip *.zip; rm *.zip"
 7za a foo.zip foo.txt -tzip -mem=AES256 -mx9 -p"$(read -rs a;printf %s "$a")"
 ./DDNet-Server "sv_map DDNetPP-maps/BlmapChill"
 find . -name "*.sh" -print0 | xargs -0 shfmt -d
+python3 ~/Desktop/git/maps-scripts/BlmapChill/print_version.py BlmapChill.map
