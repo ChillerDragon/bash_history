@@ -26,5 +26,5 @@ all_dirs "unzip *.zip; rm *.zip"
 ./DDNet-Server "sv_map DDNetPP-maps/BlmapChill"
 find . -name "*.sh" -print0 | xargs -0 shfmt -d
 python3 ~/Desktop/git/maps-scripts/BlmapChill/print_version.py BlmapChill.map
-cd ~/.teeworlds/skins && for x in yeetswarb.json yeebbarb.json leetsharp.json beetcarb.json needbab.json; do cp greensward.json "$x"; done
+cd ~/.teeworlds/skins7 && for x in yeetswarb.json yeebbarb.json leetsharp.json beetcarb.json needbab.json; do cp greensward.json "$x"; done
 
