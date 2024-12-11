@@ -28,4 +28,5 @@ all_dirs "unzip *.zip; rm *.zip"
 find . -name "*.sh" -print0 | xargs -0 shfmt -d
 python3 ~/Desktop/git/maps-scripts/BlmapChill/print_version.py BlmapChill.map
 cd ~/.teeworlds/skins7 && for x in yeetswarb.json yeebbarb.json yeegsharp.json yeetcarb.json yeedbab.json; do cp greensward.json "$x"; done
+cd ~/Desktop/git/twnet_parser/ && source venv/bin/activate && cd examples/07/flood && ./flood.py localhost 8303 10
 
