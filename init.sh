@@ -31,8 +31,30 @@ __chiller_hist_flipper_deduplicate() {
 
 __chiller_hist_flipper_dump_history() {
 	local hist_file="$1"
+
+	# vanilla history
 	tac "$hist_file"
-	cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt
+
+	# git tracked history
+	cat "$SCRIPT_DIR/bash_history"
+
+	# git ignored history
+	test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt
+
+	# git submodule / sub folder git history
+	local hist_dir
+	for hist_dir in "$SCRIPT_DIR"/bash_history.d/*/
+	do
+		[ -d "$hist_dir" ] || continue
+
+		local extra_file
+		for extra_file in "$hist_dir"*.txt
+		do
+			[ -f "$extra_file" ] || continue
+
+			cat "$extra_file"
+		done
+	done
 }
 
 __chiller_hist_flipper() {
