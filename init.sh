@@ -29,6 +29,12 @@ __chiller_hist_flipper_deduplicate() {
 	return 0
 }
 
+__chiller_hist_flipper_dump_history() {
+	local hist_file="$1"
+	tac "$hist_file"
+	cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt
+}
+
 __chiller_hist_flipper() {
 	if [ ! -d "$SCRIPT_DIR" ]
 	then
@@ -55,7 +61,7 @@ __chiller_hist_flipper() {
 
 	local match
 	match="$( ( \
-		tac "$hist_file"; cat "$SCRIPT_DIR/bash_history"; test -f "$SCRIPT_DIR"/nudes.txt && cat "$SCRIPT_DIR"/nudes.txt \
+		__chiller_hist_flipper_dump_history "$hist_file"; \
 		) |
 		fzf --prompt='[C-o] for old> ')"
 
