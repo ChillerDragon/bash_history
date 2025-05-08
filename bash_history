@@ -32,4 +32,4 @@ cd ~/Desktop/git/twnet_parser/ && source venv/bin/activate && cd examples/07/flo
 ./DDNet-Server "sv_map tmp/bridge;sv_gametype zCatch"
 ./DDNet-Server "sv_map tmp/bridge_pickups;sv_allow_zoom 1;sv_gametype solofng"
 kubectl get pods --field-selector="status.phase!=Succeeded,status.phase!=Running"
-
+git checkout --ours -- README.md
