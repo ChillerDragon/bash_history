@@ -33,3 +33,5 @@ cd ~/Desktop/git/twnet_parser/ && source venv/bin/activate && cd examples/07/flo
 ./DDNet-Server "sv_map tmp/bridge_pickups;sv_allow_zoom 1;sv_gametype solofng"
 kubectl get pods --field-selector="status.phase!=Succeeded,status.phase!=Running"
 git checkout --ours -- README.md
+rm libantibot.so;ln -s ../../antibot-insta/libantibot.so .
+rm libantibot.so;ln -s ../../antibob/libantibot.so .
