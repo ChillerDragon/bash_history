@@ -35,3 +35,4 @@ kubectl get pods --field-selector="status.phase!=Succeeded,status.phase!=Running
 git checkout --ours -- README.md
 rm libantibot.so;ln -s ../../antibot-insta/libantibot.so .
 rm libantibot.so;ln -s ../../antibob/libantibot.so .
+nmap -sP 192.168.178.0/24
