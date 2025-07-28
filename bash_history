@@ -12,6 +12,7 @@ cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 cmake .. -DCMAKE_CXX_FLAGS=-rdynamic
 cmake .. -DDOWNLOAD_GTEST=ON && make run_tests -j12
 cmake .. -DCMAKE_TESTING_ENABLED=ON && GTEST_BRIEF=1 make run_tests -j12
+make testrunner && ./testrunner --gtest_filter=CTestGameWorld.BasicTick
 cmake .. -DCMAKE_CXX_CLANG_TIDY="clang-tidy;-warnings-as-errors=*" -DCMAKE_C_CLANG_TIDY="clang-tidy;-warnings-as-errors=*" -DCMAKE_BUILD_TYPE=Debug -Werror=dev
 zbarimg -q --raw qrcode.png | pass otp insert totp-secret
 rsync --info=progress2 -r chiller@zillyhuhn.com:/tmp/foo .
