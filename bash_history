@@ -37,3 +37,4 @@ git checkout --ours -- README.md
 rm libantibot.so;ln -s ../../antibot-insta/libantibot.so .
 rm libantibot.so;ln -s ../../antibob/libantibot.so .
 nmap -sP 192.168.178.0/24
+./DDNet "dbg_snap 1" --dump "10 04 02 59 13 f3 4e 3d df 5c a6 dd bf 6e 53 1c b4 7b 8c c1 19 b4 58 ff ff ff 9a ad b8 01"
