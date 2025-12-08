@@ -40,3 +40,4 @@ nmap -sP 192.168.178.0/24
 ./DDNet "dbg_snap 1;net_security 0" --dump "10 04 02 59 13 f3 4e 3d df 5c a6 dd bf 6e 53 1c b4 7b 8c c1 19 b4 58 ff ff ff 9a ad b8 01"
 (cd ~/Desktop/git/twnet_parser/ && rm -rf venv/ && python3 -m venv venv && source venv/bin/activate && pip install -e .)
 pprof --text gfs_master ./logs/server.hprof.0001.heap
+git push --force-with-lease
