@@ -25,13 +25,14 @@ perl -i -p -e's/\bm_paPlayerInfosRace\b/m_apPlayerInfosRace/g' $(find . -name *.
 ./DDNet ~/.teeworlds/demos/auto/$(ls --sort=time ~/.teeworlds/demos/auto/ | head -n1)
 all_dirs "unzip *.zip; rm *.zip"
 7za a foo.zip foo.txt -tzip -mem=AES256 -mx9 -p"$(read -rs a;printf %s "$a")"
-./DDNet-Server "sv_map DDNetPP-maps/BlmapChill"
 find . -name "*.sh" -print0 | xargs -0 shfmt -d
 python3 ~/Desktop/git/maps-scripts/BlmapChill/print_version.py BlmapChill.map
 cd ~/.teeworlds/skins7 && for x in yeetswarb.json yeebbarb.json yeegsharp.json yeetcarb.json yeedbab.json; do cp greensward.json "$x"; done
 cd ~/Desktop/git/twnet_parser/ && source venv/bin/activate && cd examples/07/flood && ./flood.py localhost 8303 10
+./DDNet-Server "sv_map DDNetPP-maps/BlmapChill"
 ./DDNet-Server "sv_map tmp/bridge;sv_gametype zCatch"
 ./DDNet-Server "sv_map tmp/bridge_pickups;sv_allow_zoom 1;sv_gametype solofng"
+./DDNet-Server "sv_gametype dm"
 kubectl get pods --field-selector="status.phase!=Succeeded,status.phase!=Running"
 git checkout --ours -- README.md
 rm libantibot.so;ln -s ../../antibot-insta/build/libantibot.so .
