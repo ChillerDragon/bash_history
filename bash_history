@@ -18,6 +18,7 @@ zbarimg -q --raw qrcode.png | pass otp insert totp-secret
 rsync --info=progress2 -r chiller@zillyhuhn.com:/tmp/foo .
 sudo tcpdump -i lo "port 8303" -w debug.pcap
 ./DDNet "connect tw-0.7+udp://127.0.0.1"
+term-zx "connect localhost"
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@github.com
 mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" -G Ninja ../llvm/
 git checkout -b pr_07_client_b76
